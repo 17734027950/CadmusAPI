@@ -1,9 +1,6 @@
 # CadmusAPI
 CadmusApi hub client library
 
-# Install
-`composer require cadmus/api @dev`
-
 # Example
 ```php
 <?php
@@ -14,9 +11,15 @@ CadmusApi hub client library
    
    $api = new Client("01904164d2e2db20400612e9d70d24b3dc2db17567ec92cb93c51b87697793c1");  // Ключ к api
    
-   $response = $api->call("pg/demo", [
+   $host = "";
+
+    $method = 'post'; // post/get
+
+   $response = $api->call($method, $host, "data/", [
      "assoc"      => "array",
      "of"         => "parameters",
+     'title'  => 'test1',
+    'content'  => 'test1',
    ]);
    
    if ($response !== false)
